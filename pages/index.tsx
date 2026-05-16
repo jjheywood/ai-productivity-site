@@ -1,202 +1,228 @@
 import Head from 'next/head';
 
+const testimonials = [
+  {
+    quote: "This tool completely transformed how I manage my daily tasks. I've saved 5+ hours every week.",
+    author: "Sarah Johnson",
+    role: "Product Manager",
+    company: "TechCorp",
+    rating: 5,
+  },
+  {
+    quote: "The AI suggestions are incredibly accurate. It's like having a personal assistant that knows exactly what I need.",
+    author: "Michael Chen",
+    role: "Software Engineer",
+    company: "DevStudio",
+    rating: 5,
+  },
+  {
+    quote: "We implemented this across our entire team. Productivity increased by 40% in the first month.",
+    author: "Emily Rodriguez",
+    role: "Team Lead",
+    company: "InnovateCo",
+    rating: 5,
+  },
+  {
+    quote: "Simple to use, powerful results. I wish I had discovered this sooner.",
+    author: "David Kim",
+    role: "Freelance Designer",
+    company: "KimCreative",
+    rating: 5,
+  },
+  {
+    quote: "The workflow automation features are a game changer. No more manual task tracking.",
+    author: "Amanda Foster",
+    role: "Operations Manager",
+    company: "FlowState",
+    rating: 5,
+  },
+  {
+    quote: "Best investment we've made for our startup. The ROI was visible within weeks.",
+    author: "James Wilson",
+    role: "Founder",
+    company: "LaunchPad",
+    rating: 5,
+  },
+];
+
+const features = [
+  {
+    title: "AI-Powered Task Prioritization",
+    description: "Let our intelligent algorithms sort and prioritize your tasks based on urgency, importance, and context.",
+    icon: "🧠",
+  },
+  {
+    title: "Smart Scheduling",
+    description: "Automatically schedule your tasks at optimal times based on your calendar, energy levels, and preferences.",
+    icon: "📅",
+  },
+  {
+    title: "Real-Time Collaboration",
+    description: "Work seamlessly with your team with instant updates, shared projects, and synchronized progress tracking.",
+    icon: "👥",
+  },
+  {
+    title: "Deep Work Mode",
+    description: "Block distractions and enter focused work sessions with smart notifications and do-not-disturb integrations.",
+    icon: "🎯",
+  },
+  {
+    title: "Analytics & Insights",
+    description: "Track your productivity patterns with detailed analytics and personalized recommendations for improvement.",
+    icon: "📊",
+  },
+  {
+    title: "Cross-Platform Sync",
+    description: "Access your tasks and projects from anywhere with seamless sync across web, desktop, and mobile apps.",
+    icon: "🔄",
+  },
+];
+
 export default function Home() {
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
       <Head>
-        <title>AI Productivity - Supercharge Your Workflow with AI</title>
-        <meta name="description" content="Boost your productivity with AI-powered tools. Automate repetitive tasks, generate content faster, and streamline your workflow." />
+        <title>AI Productivity - Supercharge Your Workflow</title>
+        <meta name="description" content="AI-powered productivity tools to help you work smarter, not harder. Automate tasks, prioritize intelligently, and achieve more." />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="min-h-screen bg-gradient-to-b from-slate-50 to-slate-100">
-        {/* Hero Section */}
-        <section className="px-4 py-20 mx-auto max-w-7xl">
+      {/* Hero Section */}
+      <header className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+          <div className="flex justify-between items-center">
+            <div className="text-2xl font-bold">AI Productivity</div>
+            <div className="flex gap-6">
+              <a href="#features" className="hover:text-blue-200 transition">Features</a>
+              <a href="#testimonials" className="hover:text-blue-200 transition">Testimonials</a>
+              <a href="/blog" className="hover:text-blue-200 transition">Blog</a>
+              <a href="#pricing" className="bg-white text-blue-600 px-4 py-2 rounded-lg font-semibold hover:bg-blue-50 transition">Get Started</a>
+            </div>
+          </div>
+        </nav>
+        
+        <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
           <div className="text-center">
-            <h1 className="text-5xl font-bold tracking-tight text-slate-900 sm:text-6xl">
-              Supercharge Your Workflow with AI
+            <h1 className="text-5xl sm:text-6xl font-bold mb-6">
+              Work Smarter, <br />Not Harder
             </h1>
-            <p className="mt-6 text-lg leading-8 text-slate-600 max-w-2xl mx-auto">
-              Boost your productivity with AI-powered tools. Automate repetitive tasks,
-              generate content faster, and streamline your workflow.
+            <p className="text-xl sm:text-2xl text-blue-100 mb-10 max-w-3xl mx-auto">
+              AI-powered productivity tools that help you prioritize, focus, and achieve more every day.
             </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <a
-                href="#features"
-                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
-              >
-                Get started
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <a href="#pricing" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition shadow-lg">
+                Start Free Trial
               </a>
-              <a
-                href="#testimonials"
-                className="text-sm font-semibold leading-6 text-slate-900 hover:text-indigo-600"
-              >
-                See what others say <span aria-hidden="true">→</span>
+              <a href="#features" className="border-2 border-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white hover:text-blue-600 transition">
+                Explore Features
               </a>
             </div>
           </div>
-        </section>
+        </main>
+      </header>
 
-        {/* Features Section */}
-        <section id="features" className="py-20 bg-white">
-          <div className="mx-auto max-w-7xl px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                Everything you need to work smarter
-              </h2>
-              <p className="mt-4 text-lg text-slate-600">
-                Powerful features designed to save you time and boost efficiency
-              </p>
+      {/* Features Section */}
+      <section id="features" className="py-20 px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-4xl font-bold text-slate-800 mb-4">Powerful Features</h2>
+          <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+            Everything you need to supercharge your productivity, all in one place.
+          </p>
+        </div>
+        
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {features.map((feature, index) => (
+            <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition border border-slate-100">
+              <div className="text-4xl mb-4">{feature.icon}</div>
+              <h3 className="text-xl font-semibold text-slate-800 mb-2">{feature.title}</h3>
+              <p className="text-slate-600">{feature.description}</p>
             </div>
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  title: 'Smart Automation',
-                  description: 'Automate repetitive tasks with intelligent workflows that learn from your patterns.',
-                  icon: '⚡',
-                },
-                {
-                  title: 'Content Generation',
-                  description: 'Create high-quality content in seconds with AI-powered writing assistance.',
-                  icon: '✍️',
-                },
-                {
-                  title: 'Data Insights',
-                  description: 'Get actionable insights from your data with intelligent analysis and visualization.',
-                  icon: '📊',
-                },
-                {
-                  title: 'Seamless Integration',
-                  description: 'Connect with your favorite tools and platforms for a unified workflow experience.',
-                  icon: '🔗',
-                },
-                {
-                  title: 'Real-Time Collaboration',
-                  description: 'Work together with your team in real-time with synchronized AI assistance.',
-                  icon: '👥',
-                },
-                {
-                  title: 'Secure & Private',
-                  description: 'Your data stays protected with enterprise-grade security and privacy controls.',
-                  icon: '🔒',
-                },
-              ].map((feature, index) => (
-                <div
-                  key={index}
-                  className="rounded-2xl bg-slate-50 p-8 hover:shadow-lg transition-shadow"
-                >
-                  <div className="text-4xl mb-4">{feature.icon}</div>
-                  <h3 className="text-xl font-semibold text-slate-900">{feature.title}</h3>
-                  <p className="mt-2 text-slate-600">{feature.description}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        {/* Testimonials Section */}
-        <section id="testimonials" className="py-20 bg-gradient-to-b from-slate-100 to-slate-50">
-          <div className="mx-auto max-w-7xl px-4">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-                Loved by teams worldwide
-              </h2>
-              <p className="mt-4 text-lg text-slate-600">
-                See what our customers have to say about their experience
-              </p>
-            </div>
-            <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-              {[
-                {
-                  quote: "This tool has completely transformed how our team works. We've cut our content creation time by 60% and the quality is better than ever.",
-                  author: "Sarah Chen",
-                  role: "Marketing Director",
-                  company: "TechScale Inc.",
-                  rating: 5,
-                },
-                {
-                  quote: "The automation features are incredible. What used to take hours now takes minutes. It's like having an extra team member.",
-                  author: "Marcus Johnson",
-                  role: "Product Manager",
-                  company: "InnovateLabs",
-                  rating: 5,
-                },
-                {
-                  quote: "We evaluated several AI productivity tools and this was by far the best. The integration with our existing workflow was seamless.",
-                  author: "Emily Rodriguez",
-                  role: "Operations Lead",
-                  company: "FastTrack Solutions",
-                  rating: 5,
-                },
-                {
-                  quote: "The insights we get from the data analysis feature alone are worth the subscription. We've identified so many optimization opportunities.",
-                  author: "David Kim",
-                  role: "Data Analytics Manager",
-                  company: "DataDriven Co.",
-                  rating: 5,
-                },
-                {
-                  quote: "Game-changer for our writing team. We're producing more content at higher quality, and our writers are more creative than ever.",
-                  author: "Lisa Thompson",
-                  role: "Editorial Director",
-                  company: "ContentFirst Media",
-                  rating: 5,
-                },
-                {
-                  quote: "The security features gave us confidence to adopt AI tools company-wide. The privacy controls are exactly what we needed.",
-                  author: "Michael Brown",
-                  role: "CTO",
-                  company: "SecureTech Systems",
-                  rating: 5,
-                },
-              ].map((testimonial, index) => (
-                <div
-                  key={index}
-                  className="rounded-2xl bg-white p-8 shadow-sm hover:shadow-md transition-shadow"
-                >
-                  <div classNamp="flex items-center gap-1 mb-4">
-                    {[...Array(testimonial.rating)].map((_, i) => (
-                      <svg
-                        key={i}
-                        className="h-5 w-5 text-yellow-400"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-slate-700 italic">"{testimonial.quote}"
-                  <div className="mt-6">
-                    <p className="font-semibold text-slate-900">{testimonial.author}</p>
-                    <p className="text-sm text-slate-600">
-                      {testimonial.role}, {testimonial.company}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* CTA Section */}
-        <section className="py-20 bg-indigo-600">
-          <div className="mx-auto max-w-7xl px-4 text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready to boost your productivity?
-            </h2>
-            <p className="mt-4 text-lg text-indigo-100">
-              Join thousands of teams already working smarter with AI
+      {/* Testimonials Section */}
+      <section id="testimonials" className="py-20 px-4 sm:px-6 lg:px-8 bg-slate-50">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold text-slate-800 mb-4">What Our Users Say</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Join thousands of professionals who have transformed their workflow.
             </p>
-            <a
-              href="#"
-              className="mt-8 inline-block rounded-md bg-white px-5 py-3 text-sm font-semibold text-indigo-600 shadow-sm hover:bg-indigo-50"
-            >
-              Start your free trial
-            </a>
           </div>
-        </section>
-      </main>
-    </>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((testimonial, index) => (
+              <div key={index} className="bg-white p-6 rounded-xl shadow-sm hover:shadow-lg transition border border-slate-100">
+                <div className="flex items-center gap-1 mb-4">
+                  {[...Array(testimonial.rating)].map((_, i) => (
+                    <svg key={i} className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+                      <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-slate-700 italic mb-4">&ldquo;{testimonial.quote}&rdquo;</p>
+                <div className="border-t border-slate-100 pt-4">
+                  <p className="font-semibold text-slate-800">{testimonial.author}</p>
+                  <p className="text-sm text-slate-500">{testimonial.role} at {testimonial.company}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-indigo-700 text-white">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-4xl font-bold mb-6">Ready to Boost Your Productivity?</h2>
+          <p className="text-xl text-blue-100 mb-8">
+            Start your free trial today. No credit card required.
+          </p>
+          <a href="#pricing" className="bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold text-lg hover:bg-blue-50 transition shadow-lg inline-block">
+            Get Started Free
+          </a>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-slate-800 text-slate-300 py-12 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-4 gap-8">
+            <div>
+              <h3 className="text-white font-bold text-lg mb-4">AI Productivity</h3>
+              <p className="text-sm">Empowering professionals to achieve more with AI-powered tools.</p>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Product</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#features" className="hover:text-white transition">Features</a></li>
+                <li><a href="#pricing" className="hover:text-white transition">Pricing</a></li>
+                <li><a href="/blog" className="hover:text-white transition">Blog</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Company</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#" className="hover:text-white transition">About</a></li>
+                <li><a href="#" className="hover:text-white transition">Careers</a></li>
+                <li><a href="#" className="hover:text-white transition">Contact</a></li>
+              </ul>
+            </div>
+            <div>
+              <h4 className="font-semibold mb-4">Legal</h4>
+              <ul className="space-y-2 text-sm">
+                <li><a href="#" className="hover:text-white transition">Privacy</a></li>
+                <li><a href="#" className="hover:text-white transition">Terms</a></li>
+                <li><a href="#" className="hover:text-white transition">Security</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="border-t border-slate-700 mt-8 pt-8 text-center text-sm">
+            <p>&copy; {new Date().getFullYear()} AI Productivity. All rights reserved.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
   );
 }
